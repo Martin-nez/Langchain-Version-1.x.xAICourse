@@ -1,0 +1,14 @@
+from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
+import os
+
+load_dotenv() # load environment variables from .env file
+
+if os.environ.get("OPENAI_API_KEY") is None:
+   raise ValueError ("OPENAI_API_KEY environment variable not set.") # check if API key is available (ignore this block)
+
+
+llm = ChatOpenAI(model="gpt-5-nano", temperature=0) # the best way to create an LLM instance
+
+response = llm.invoke("Hello, how are you?")
+print(response.content)
