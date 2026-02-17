@@ -1,0 +1,27 @@
+
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
+from typing import TypedDict
+
+load_dotenv()
+
+class JokeResponse(TypedDict):
+    joke: str
+    length: int
+
+llm = ChatOpenAI (model = "gpt-5-nano", temperature = 0)
+llm_with_typed_dict = llm.with_structured_output(JokeResponse)
+
+prompt_template = ChatPromptTemplate.from_messages([
+    ("system", "You are a helpful assistant. Your answer shoul be in just one sentece."),
+    ("human", "Tell me a joke about {topic}.")
+])
+
+formated_prompt = prompt_template.invoke({"topic" : "blockchain"})
+
+response = llm_with_typed_dict.invoke(formated_prompt)
+print(response)
+print("-"*100)
+print(response.get("joke"))
+print(response.get("length"))
