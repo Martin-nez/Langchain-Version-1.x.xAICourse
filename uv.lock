@@ -298,6 +298,7 @@ dependencies = [
     { name = "langchain" },
     { name = "langchain-openai" },
     { name = "load-dotenv" },
+    { name = "pydantic" },
     { name = "python-dotenv" },
 ]
 
@@ -306,6 +307,7 @@ requires-dist = [
     { name = "langchain", specifier = ">=1.2.7" },
     { name = "langchain-openai", specifier = ">=1.1.7" },
     { name = "load-dotenv", specifier = ">=0.1.0" },
+    { name = "pydantic", specifier = ">=2.12.5" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
 ]
 
