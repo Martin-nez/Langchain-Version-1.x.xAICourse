@@ -3,7 +3,7 @@ from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnableSequence
+from langchain_core.runnables import RunnableSequence 
 
 load_dotenv()
 llm = ChatOpenAI(model = "gpt-5-nano", temperature= 0)

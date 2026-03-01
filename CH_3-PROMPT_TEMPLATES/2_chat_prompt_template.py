@@ -11,6 +11,7 @@ llm = ChatOpenAI (model = "gpt-5-nano", temperature =0)
 # - "system" sets the behavior of the assistant
 # - "human" is the input from the user
 # - {topic} is a variable that will be filled in at run time
+
 prompt_template = ChatPromptTemplate.from_messages([
     ("system", "You are a helpful assistant. Give me the most rescent answers. Make it short and concise."),
     ("human", "Tell me a joke about {topic}.")
